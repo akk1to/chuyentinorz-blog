@@ -7,7 +7,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, published, updated, heroImage } = Astro.props;
+const { title, description, published, updated, heroImage, author } = Astro.props;
 
 const publishedDate = new Date(published);
 const updatedDate = new Date(Number(updated));
@@ -73,6 +73,7 @@ const updatedDate = new Date(Number(updated));
 					<div class="title">
 						<div class="date">
 							<FormattedDate date={publishedDate} />
+							<p>Author: {author}</p>
 						</div>
 						<h1>{title}</h1>
 						<p>{description}</p>

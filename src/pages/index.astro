@@ -9,7 +9,7 @@ const posts = (await getCollection("blog")).sort((a, b) => Number(b.data.publish
 
 function getRandomPlaceholder() {
     const random = Math.floor(Math.random() * 4) + 1;
-    return `https://cdn.hrsn.net/blog/placeholders/${random}.jpg`;
+    return `https://upload.cdn.akk1to.is-a.dev/blogcontent/heroImage/${random}.jpg`;
 }
 ---
 
@@ -83,10 +83,9 @@ function getRandomPlaceholder() {
     </head>
     <body>
         <main>
-            <h1>William's Blog</h1>
-
+            <h1>ChuyenTinORZ's Blog</h1>
+            <p>Our team blog to post things we learn and share with the world.</p>
             <br />
-
             <section>
                 <ul>
                     {
@@ -100,6 +99,8 @@ function getRandomPlaceholder() {
                                     <p class="date">
                                         <FormattedDate date={new Date(post.data.published)} />
                                     </p>
+                                    <p class="date">Author: {post.data.author}</p>
+                                    
                                 </a>
                             </li>
                         ))
